@@ -1,4 +1,4 @@
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie() {
 }
@@ -11,23 +11,6 @@ void Zombie::announce(void) {
     }
 }
 
-Zombie* Zombie::newZombie(std::string name) {
-    Zombie* newZombie = new Zombie();
-    newZombie->name = name;
-    return newZombie;
-}
-
-
-void Zombie::randomChump(std::string name) {
-    Zombie newZombie;
-    newZombie.name = name;
-    newZombie.announce();
-}
-
-Zombie* Zombie::zombieHorde(int N, std::string name) {
-    Zombie* zombieHorde = new Zombie[N];
-    for (int i = 0; i < N; i++) {
-        zombieHorde[i].name = name;
-    }
-    return zombieHorde;
+void Zombie::setName(std::string name) {
+    this->name = name;
 }

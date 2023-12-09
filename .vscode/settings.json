@@ -77,6 +77,8 @@
         "__nullptr": "cpp",
         "__string": "cpp",
         "chrono": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "__functional_base": "cpp",
+        "functional": "cpp"
     }
 }

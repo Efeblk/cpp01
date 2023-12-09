@@ -1,24 +1,16 @@
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
-Zombie::Zombie(/* args */) {
+Zombie::Zombie() {
 }
 
 void Zombie::announce(void) {
-    if (this->name == "Foo") {
-        std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+    if (name == "Foo") {
+        std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
     } else {
-        std::cout << "<" << this->name << "> BraiiiiiiinnnzzzZ..." << std::endl;
+        std::cout << "<" << name << "> BraiiiiiiinnnzzzZ..." << std::endl;
     }
 }
 
-Zombie* Zombie::newZombie(std::string name) {
-    Zombie* newZombie = new Zombie();
-    newZombie->name = name;
-    return newZombie;
-}
-
-void Zombie::randomChump(std::string name) {
-    Zombie newZombie;
-    newZombie.name = name;
-    newZombie.announce();
+void Zombie::setName(std::string name) {
+    this->name = name;
 }
