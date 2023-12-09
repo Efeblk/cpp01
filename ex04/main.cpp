@@ -1,33 +1,41 @@
-#include <iostream>
 #include <fstream>
-#include <sstream>
+#include <iostream>
 
-int main(int argc, char const *argv[])
+void    to_find(std::string &file, std::string &s2,std::string &s3)
 {
-    if (argc == 4)
+    int a = 0;
+    while(1)
     {
-        std::string s1 = argv[2];
-        std::string s2 = argv[3];
-        std::ifstream file;
-        std::ofstream replace;
-        file.open(argv[1]);
-        replace.open(std::string(argv[1]) + ".replace");
-        if (file.is_open() && replace.is_open())
+        a = file.find(s2);
+        if(a == -1)
+            break ;
+        file.erase(a,s2.length());
+        file.insert(a,s3);
+    }
+}
+int main(int ac,char **av)
+{
+    if(ac == 4)
+    {
+        std::string temp;
+        std::string s1 = av[2];
+        std::string s2 = av[3];
+        std::string file = av[1];
+        std::ifstream f_name(av[1]);
+        file.append(".replace");
+        if(f_name.is_open())
         {
-            std::string line;
-            while (std::getline(file, line)) 
+            std::ofstream n_file;
+            n_file.open(file);
+            while(getline(f_name,temp))
             {
-                size_t pos = 0;
-                while ((pos = line.find(s1, pos)) != std::string::npos) 
-                {
-                    line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
-                    pos += s2.length();
-                }
-                replace << line << '\n';
+                to_find(temp,s1,s2);
+                n_file << temp << std::endl;
             }
         }
-        file.close(); 
-        replace.close();
+        else
+            std::cout << "Wrong file name" << std::endl;
     }
-    return 0;
+    else
+        std::cout << "Wrong argument" << std::endl;
 }
