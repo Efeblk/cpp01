@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
     std::cout << "adress of stringREF: " << &stringREF << std::endl;
 
     std::cout << "string variable: " << string << std::endl;
-    std::cout << "stringPTR" << *stringPTR << std::endl;
-    std::cout << "stringREF" << stringREF << std::endl;
+    std::cout << "stringPTR: " << *stringPTR << std::endl;
+    std::cout << "stringREF: " << stringREF << std::endl;
     return 0;
 }
