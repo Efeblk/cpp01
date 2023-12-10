@@ -4,7 +4,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = harl
 
-SRC = Harl.cpp
+SRC = Harl.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

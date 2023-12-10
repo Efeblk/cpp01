@@ -16,8 +16,6 @@ void Harl::error(void) {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-#include "Harl.hpp"
-
 void Harl::complain(std::string level) {
     a_functions funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
