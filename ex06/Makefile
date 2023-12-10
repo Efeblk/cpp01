@@ -2,7 +2,7 @@ CPP = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = harl
+NAME = harlFilter
 
 SRC = Harl.cpp main.cpp
 
